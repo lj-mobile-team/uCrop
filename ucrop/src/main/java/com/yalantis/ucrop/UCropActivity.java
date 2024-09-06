@@ -309,6 +309,9 @@ public class UCropActivity extends AppCompatActivity {
             wrapper.setVisibility(View.VISIBLE);
             LayoutInflater.from(this).inflate(R.layout.ucrop_controls, wrapper, true);
 
+            ViewGroup wrapperControls = findViewById(R.id.wrapper_states);
+            wrapperControls.setVisibility(View.GONE);
+
             mControlsTransition = new AutoTransition();
             mControlsTransition.setDuration(CONTROLS_ANIMATION_DURATION);
 
@@ -620,14 +623,14 @@ public class UCropActivity extends AppCompatActivity {
         mLayoutScale.setVisibility(stateViewId == R.id.state_scale ? View.VISIBLE : View.GONE);
 
         changeSelectedTab(stateViewId);
-
-        if (stateViewId == R.id.state_scale) {
-            setAllowedGestures(0);
-        } else if (stateViewId == R.id.state_rotate) {
-            setAllowedGestures(1);
-        } else {
-            setAllowedGestures(2);
-        }
+        setAllowedGestures(0);
+//        if (stateViewId == R.id.state_scale) {
+//            setAllowedGestures(0);
+//        } else if (stateViewId == R.id.state_rotate) {
+//            setAllowedGestures(1);
+//        } else {
+//            setAllowedGestures(2);
+//        }
     }
 
     private void changeSelectedTab(int stateViewId) {

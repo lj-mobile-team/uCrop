@@ -10,6 +10,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Parcelable;
+import android.util.Log;
 
 import com.yalantis.ucrop.model.AspectRatio;
 
@@ -312,6 +313,7 @@ public class UCrop {
 
         public static final String EXTRA_UCROP_ROOT_VIEW_BACKGROUND_COLOR = EXTRA_PREFIX + ".UcropRootViewBackgroundColor";
 
+        public static final String EXTRA_SQUARE_MODE = EXTRA_PREFIX + ".SquareMode";
 
         private final Bundle mOptionBundle;
 
@@ -519,6 +521,10 @@ public class UCrop {
          */
         public void setFreeStyleCropEnabled(boolean enabled) {
             mOptionBundle.putBoolean(EXTRA_FREE_STYLE_CROP, enabled);
+        }
+
+        public void setSquareMode(boolean enabled){
+            mOptionBundle.putBoolean(EXTRA_SQUARE_MODE, enabled);
         }
 
         /**

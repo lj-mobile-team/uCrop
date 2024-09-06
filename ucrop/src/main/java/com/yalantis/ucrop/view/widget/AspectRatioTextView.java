@@ -125,7 +125,7 @@ public class AspectRatioTextView extends AppCompatTextView {
 
     private void applyActiveColor(@ColorInt int activeColor) {
         if (mDotPaint != null) {
-            mDotPaint.setColor(activeColor);
+            mDotPaint.setColor(activeColor);//getResources().getColor(R.color.ucrop_color_progress_wheel_line
         }
         ColorStateList textViewColorStateList = new ColorStateList(
                 new int[][]{
